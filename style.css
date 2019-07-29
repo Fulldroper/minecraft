@@ -29,8 +29,20 @@ body{
 #monitoring{
     background-color: #dbdbdb;
     padding: 10px;
+    display: inline-flex;
+    border-radius: 10px;
 }
-
+#monitoring>img{
+    margin-left:5px;
+    margin-right:15px;
+    border-radius: 50px;
+}
+#monitoring>div{
+    margin-right:5px;
+}
+#monitoring>div>p{
+    margin:0px;
+}
 
 
 

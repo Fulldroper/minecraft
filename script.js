@@ -17,7 +17,7 @@ if (!req.favicon) {
 }
 
 canvas.innerHTML='<img with="50px" height="50px" src="'+req.favicon+'"></img>';
-canvas.innerHTML+='<p>Online: '+req.online+'</p>';
-canvas.innerHTML+='<p>Motd: '+req.motd+'</p>';
-canvas.innerHTML+='<p>Slots: '+req.players.now+'/'+req.players.max+'</p>';
+canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
+'<p>Motd: '+req.motd+'</p>'+
+'<p>Slots: '+req.players.now+'/'+req.players.max+'</p></div>';
 console.log(req)
