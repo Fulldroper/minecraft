@@ -62,17 +62,6 @@ body{
     padding: 10px;
     display: inline-flex;
     border-radius: 10px;
-	-webkit-animation: myfirst linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
-  animation: myfirst linear 2s infinite alternate;
-}
-
-#monitoring2{
-    background-color: #f4f0f0;
-    padding: 10px;
-    display: inline-flex;
-    border-radius: 10px;
-	-webkit-animation: myfirst2 linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
-  animation: myfirst2 linear 2s infinite alternate;
 }
 #monitoring>img{
     margin-left:5px;
