@@ -44,7 +44,8 @@ var req = JSON.parse(httpGet("https://mcapi.us/server/status?ip="+domen+"&port="
 if (!req.favicon) {
     req.favicon=errImg;
 }
-
+var anim = req.online== true? "myfirst" : "myfirst2";
+canvsa.style="-webkit-animation: "+anim+" linear 2s infinite alternate;animation: "+anim+" linear 2s infinite alternate;";
 canvas.innerHTML='<img id="mon-img" with="50px" height="50px" src="'+req.favicon+'"></img>';
 canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
 '<p>Motd: '+req.motd+'</p>'+
