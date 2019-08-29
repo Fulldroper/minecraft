@@ -56,16 +56,7 @@ mon_img.onmouseenter=()=>{
     mon_img.src=refreshImg;
     mon_img.style.cursor="pointer";
     mon_img.onclick=()=>{
-        req = JSON.parse(httpGet("https://mcapi.us/server/status?ip="+domen+"&port="+port));
-
-        if (!req.favicon) {
-            req.favicon=errImg;
-        }
-
-        canvas.innerHTML='<img id="mon-img" with="50px" height="50px" src="'+req.favicon+'"></img>';
-        canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
-        '<p>Motd: '+req.motd+'</p>'+
-        '<p>IP: <a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> '+req.players.now+'/'+req.players.max+'</p></div>';
+      console.log("refresh");
     }
 }
 mon_img.onmouseleave=()=>{
