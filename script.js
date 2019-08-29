@@ -45,12 +45,14 @@ if (!req.favicon) {
     req.favicon=errImg;
 }
 canvas.innerHTML='<img id="mon-img" with="50px" height="50px" src="'+req.favicon+'"></img>';
-var anim = req.online== true? "myfirst" : "myfirst2";
+var anim = req.online == true? "myfirst" : "myfirst2";
 canvas.style="-webkit-animation: "+anim+" linear 2s infinite alternate;animation: "+anim+" linear 2s infinite alternate;";
-canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
+if(req.online== true){canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
 '<p>Motd: '+req.motd+'</p>'+
 '<p style=margin-top:5px; ><a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> <a style=float:right;>'+req.players.now+'/'+req.players.max+'</a></p></div>';
-
+   }else{
+   canvas.innerHTML+='<div><p>Online: '+req.online+'</p></div>';
+   }
 var mon_img= document.getElementById('mon-img')
 
 mon_img.onmouseenter=()=>{
