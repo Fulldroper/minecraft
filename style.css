@@ -1,3 +1,25 @@
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes myfirst {
+  0%   {background-color:#f4f0f0;}
+  100% {background-color:#afffb2;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  0%   {background-color:#f4f0f0;}
+  100% {background-color:#afffb2;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes myfirst2 {
+  0%   {background-color:#f4f0f0;}
+  100% {background-color:#ffafaf;}
+}
+
+/* Standard syntax */
+@keyframes myfirst2 {
+  0%   {background-color:#f4f0f0;}
+  100% {background-color:#ffafaf;}
+}
 #ip-addr{
 background: #cacaca;
 border-radius: 10px;
