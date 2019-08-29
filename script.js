@@ -48,7 +48,7 @@ if (!req.favicon) {
 canvas.innerHTML='<img id="mon-img" with="50px" height="50px" src="'+req.favicon+'"></img>';
 canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
 '<p>Motd: '+req.motd+'</p>'+
-'<p>IP: <a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> '+req.players.now+'/'+req.players.max+'</p></div>';
+'<p><a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> <a style=float:right;>'+req.players.now+'/'+req.players.max+'</a></p></div>';
 
 var mon_img= document.getElementById('mon-img')
 
