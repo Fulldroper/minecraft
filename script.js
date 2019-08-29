@@ -52,7 +52,7 @@ canvas.innerHTML='<img id="mon-img" with="50px" height="50px" src="'+req.favicon
 '<p>Motd: '+req.motd+'</p>'+
 '<p style=margin-top:5px; ><a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> <a style=float:right;>'+req.players.now+'/'+req.players.max+'</a></p></div>';
 }else{
-   canvas.innerHTML+='<div><p>Offline/p></div>';
+   canvas.innerHTML+='<div><p>Offline</p></div>';
 }
 canvas.style="-webkit-animation: "+anim+" linear 2s infinite alternate;animation: "+anim+" linear 2s infinite alternate;";
 var mon_img= document.getElementById('mon-img')
