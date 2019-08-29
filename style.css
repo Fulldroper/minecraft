@@ -52,7 +52,20 @@ body{
 #monitoring>div>p{
     margin:0px;
 }
-
+#gallery{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#gallery>img{
+    width: 90px;
+    height: 65px;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor:pointer;
+    background-color: #f5efef;
+    margin-bottom:10px;
+    opacity: 0.6;
+}
 
 
 

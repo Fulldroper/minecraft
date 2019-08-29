@@ -1,3 +1,18 @@
+function addglr(x) {
+    
+}
+function glr(x) {
+    x.style.width="calc(100% - 20px)";
+    x.style.height="100%";
+    x.style.opacity="1";
+    x.setAttribute('onclick', "nglr(this)");
+}
+function nglr(x) {
+    x.style.width="90px";
+    x.style.height="65px";
+    x.style.opacity="0.6";
+    x.setAttribute('onclick', "glr(this)");
+}
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
