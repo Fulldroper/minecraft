@@ -51,7 +51,7 @@ if(req.online== true){canvas.innerHTML+='<div><p>Online: '+req.online+'</p>'+
 '<p>Motd: '+req.motd+'</p>'+
 '<p style=margin-top:5px; ><a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> <a style=float:right;>'+req.players.now+'/'+req.players.max+'</a></p></div>';
    }else{
-   canvas.innerHTML+='<div><p>Online: '+req.online+'</p></div>';
+   canvas.innerHTML+='<div><p>Offline/p></div>';
    }
 var mon_img= document.getElementById('mon-img')
 
