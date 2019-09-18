@@ -1,3 +1,16 @@
+function get_json(url, callback) {
+    http.get(url, function(res) {
+        var body = '';
+        res.on('data', function(chunk) {
+            body += chunk;
+        });
+
+        res.on('end', function() {
+            var response = JSON.parse(body);
+            callback(response);
+        });
+    });
+}
 function addglr(x) {
     
 }
@@ -8,8 +21,8 @@ function glr(x) {
     x.setAttribute('onclick', "nglr(this)");
 }
 function nglr(x) {
-    x.style.width="90px";
-    x.style.height="65px";
+    x.style.width="50px";
+    x.style.height="35px";
     x.style.opacity="0.6";
     x.setAttribute('onclick', "glr(this)");
 }
@@ -45,16 +58,14 @@ if (!req.favicon) {
     req.favicon=errImg;
 }
 
-var anim = req.online == true? "myfirst" : "myfirst2";
 if(req.online== true){
 canvas.innerHTML='<img id="mon-img" with="50px" height="50px" src="'+req.favicon+'"></img>'+
-'<div><p>Online: '+req.online+'</p>'+
-'<p>Motd: '+req.motd+'</p>'+
-'<p style=margin-top:5px; ><a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> <a style=float:right;>'+req.players.now+'/'+req.players.max+'</a></p></div>';
+'<div>'+
+'<p>'+req.motd+'</p>'+
+'<p style=margin-top:5px; ><a id="ip-addr" onclick=CopyToClipboard("ip-addr")>'+domen+":"+port+'</a> [<a>'+req.players.now+'/'+req.players.max+'</a>]</p></div>';
 }else{
    canvas.innerHTML+='<div><p>Offline</p></div>';
 }
-canvas.style="-webkit-animation: "+anim+" linear 2s infinite alternate;animation: "+anim+" linear 2s infinite alternate;";
 var mon_img= document.getElementById('mon-img')
 
 mon_img.onmouseenter=()=>{
