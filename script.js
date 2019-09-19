@@ -15,7 +15,7 @@ function addglr(x) {
     
 }
 function glr(x) {
-    x.style.width="calc(100% - 20px)";
+    x.style.width="calc(100% - 45px)";
     x.style.height="100%";
     x.style.opacity="1";
     x.setAttribute('onclick', "nglr(this)");
