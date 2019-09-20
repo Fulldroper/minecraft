@@ -149,7 +149,26 @@
             </div>
         </div>
     </br>
-    <iframe id="iframe" src="" frameborder="0" width="100%" height="500px" style="display:none"></iframe>
+    <iframe name="hiden-frame" style="display:none"></iframe>
+    <div id="iframe" style="display:none">
+        <form onsubmit="readyCallback()" id="iframe-form" action="https://docs.google.com/forms/d/e/1FAIpQLSd0VSleUxrXpmqJMm9XtJuVC_HgfoWI8G-Nnqe-1-JYBigcwg/formResponse" target="hiden-frame" method="post">
+            <label>Вам нравится наш сервер?</label></br>
+            <input id="like" name="entry.1897759361" type="radio" value="Да">
+            <label>да</label></br>
+            <input id="like" name="entry.1897759361" type="radio" value="Нет">
+            <label>нет</label></br></br>
+            <label>Ваш ник или имя</label></br>
+            <input class="iframe-input" name="entry.1877593776" type="text"></br></br>
+            <label>Как мы можем с вами связатся?</label></br>
+            <input class="iframe-input" name="entry.105681410" type="text"></br></br>
+            <label>Сообщение администрации</label></br>
+            <input class="iframe-input" name="entry.1391475986" type="text"></br></br>
+            <input type="submit" >
+        </form>
+    </div>
+    <div id="ok-msg" style="display:none">
+            <h3>Ваш запрос принят...</h3>
+    </div></br>
     <div id="callback" onclick="callbackOn(this)">Обратная связь</div>
     </br>Copyright by Fulldroper 2012-2019    
     </div>

@@ -1,5 +1,11 @@
-#iframe {
-    border-radius: 10px;
+.iframe-input{
+    border-radius: 7px;
+    border-style: dotted;
+    text-decoration: underline;
+    color: #8c8c8c;
+    border-color: white;
+    border-bottom-color: white;
+    border-bottom-color: black;
 }
  #callback{
       cursor: pointer;

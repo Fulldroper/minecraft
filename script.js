@@ -11,12 +11,16 @@ function get_json(url, callback) {
         });
     });
 }
+function readyCallback() {
+let form = document.getElementById('iframe').style.display="none";
+let ok = document.getElementById('ok-msg').style.display="block";
+let close = document.getElementById('callback').style.display="none";    
+}
 function callbackOn(x) {
     let frame = document.getElementById('iframe');
     let text = document.getElementById('callback');
     text.innerHTML="close"
     frame.style.display="block";
-    frame.src='https://docs.google.com/forms/d/e/1FAIpQLSd0VSleUxrXpmqJMm9XtJuVC_HgfoWI8G-Nnqe-1-JYBigcwg/viewform';
     x.setAttribute( "onClick","callbackOff(this)")
     x.scrollIntoView(true)
 }
