@@ -11,6 +11,22 @@ function get_json(url, callback) {
         });
     });
 }
+function callbackOn(x) {
+    let frame = document.getElementById('iframe');
+    let text = document.getElementById('callback');
+    text.innerHTML="close"
+    frame.style.display="block";
+    frame.src='https://docs.google.com/forms/d/e/1FAIpQLSd0VSleUxrXpmqJMm9XtJuVC_HgfoWI8G-Nnqe-1-JYBigcwg/viewform';
+    x.setAttribute( "onClick","callbackOff(this)")
+    x.scrollIntoView(true)
+}
+function callbackOff(x){
+    let frame = document.getElementById('iframe');
+    let text = document.getElementById('callback');
+    text.innerHTML="Обратная связь"
+    frame.style.display="none";
+    x.setAttribute( "onClick","callbackOn(this)")
+}
 function addglr(x) {
     
 }

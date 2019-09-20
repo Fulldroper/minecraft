@@ -1,3 +1,10 @@
+#iframe {
+    border-radius: 10px;
+}
+ #callback{
+      cursor: pointer;
+      color: red;
+  }
   #ip-addr{
     background: #b99aff;
     border-radius: 10px;
