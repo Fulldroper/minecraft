@@ -17,11 +17,22 @@
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA8QAAAPEBOQwM5AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKvSURBVFiFtdc/iFRXFMfxzxsV11ioAV0lEVEsbOwECxsVtEghasDGwk5sJK2NiEQQCxUkIAvi+metFplNI1roZp0iIggmWlpJwH8I2qUQx+Kd0bvXN3935sKbeXPfuef3PX/unRnNZlPVhe1ooI6xdnZhuwaHsbKTXdVVk42iKJYVRTGJv/EPPmGmKIqx3DYZS3ERb4qiqBdFsa2D7fxREckj/Il9eIe9mMbdTpnAVrzFk3i/jfXdMpCLv8BZ1GJu9wAQr3AMp/Aah1DDacxgw3cAWBaRn61wOijEYewIiOfKfjqHmSqAyUh7rY3ThUD8hMdRkgZOZ7a24zP2den0fiH2Kxt4FcYC4t88SEH1RzjfPQwIbMRLHMetJBOvsCsHqIezvX1AXMLiKohouOmo/c/R1J+SnniGpSnAWDjpGSJZvBwfsTMRv4oHOBMQL6McrZ44lfZBy9FAELiAO5n4LFYHRB2bKrbof9iSnwN9QWBPRDieiM8pz5PZ+Jw3XAviCabnAfQLodzbR+N+Ag8DZq5KPIN4i/+xosogh7jUxtGxqO9mnMTagGgrXgFxpJ1BCrE4S/vzEF+kPD1n4/4ErnQTT3xtwo+dDFKI5dFwr3E0In+kPEMamMKSXoS/0+lC2YL4iDsYj/nNEXkjSf1Ur9H3DJBA/JJstQn8FmmfyiBu9gvRu+G3rdbAumFBDCrewETy7GYCMYcbPTfjgOLzttpCIBYsntneCJtx/IXrXc+EYYh3gbjWcc2wxLO11xOI2U4QQxXPfFzLICYrSzds8Q4QD6p8jUQ88zkZvtYkEL/iPGojE28TWAvivfKf1+WRildAPFV+ma1X/litwwF8iMmhiycQByPybcrj+z5+EC/3A2Ik4gHwe6T9Vkv8axMGxJFRiSdluIJ7LfFms+kLxYgIIo35KokAAAAASUVORK5CYII=">
 </head>
 <body>
-    <div id="main">
+    <div class="main" id="main">
 
         <script>
-            window.onload=()=>{
-                document.getElementById('main').style.marginLeft=((window.innerWidth-560)/2)>0?((window.innerWidth-560)/2)+'px':0+'px'
+            var size = ((window.innerWidth-560)/2)>0?((window.innerWidth-560)/2)+'px':0+'px';
+            var css = '.main{margin-left:'+size+';}',
+            head = document.head || document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+
+            head.appendChild(style);
+
+            style.type = 'text/css';
+            if (style.styleSheet){
+            // This is required for IE8 and below.
+            style.styleSheet.cssText = css;
+            } else {
+            style.appendChild(document.createTextNode(css));
             }
             window.onresize=()=>{
                 document.getElementById('main').style.marginLeft=((window.innerWidth-560)/2)>0?((window.innerWidth-560)/2)+'px':0+'px'
