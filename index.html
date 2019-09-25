@@ -70,7 +70,24 @@
                     4.Желательно не читерить
             </div>
         </div>
-
+        <div id="block">
+            <h2 id="block-title">Сохранения:</h2>
+            <div id="block-content">
+                <script>
+                    var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onreadystatechange=()=>{
+                            if (this.readyState == 4 && this.status == 200) {
+                                var myObj = JSON.parse(this.responseText);
+                                console.log(myObj.name);
+                            }else{
+                                console.log("s");
+                            }
+                        };
+                    xmlhttp.open("GET", 'games.json', true);
+                    xmlhttp.send(); 
+                </script>
+            </div>
+        </div>
         <div id="block">
             <h2 id="block-title">Мониторинг:</h2>
             <div id="block-content">
