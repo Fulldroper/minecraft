@@ -1,4 +1,4 @@
-var save ='[
+[
     {
         "name":"apple kawaii",
         "version":"1.7.10",
@@ -27,4 +27,4 @@ var save ='[
         "world-list":["DIM-1","DIM-17","DIM-37","DIM-38","DIM-39","DIM1","DIM7","event","sad"],
         "mod-list":"https://github.com/Fulldroper/m-reloadv2/archive/master.zip"
     }
-]'
+]
