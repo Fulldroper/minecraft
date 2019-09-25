@@ -3,6 +3,7 @@
         "name":"apple kawaii",
         "version":"1.7.10",
         "backup-dir":"apple-kawaii",
+        "world-list":["DIM-1","DIM1","flat"],
         "mod-list":"https://github.com/Fulldroper/apple_kawaii/archive/master.zip"
     }
 ]
