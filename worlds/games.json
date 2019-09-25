@@ -5,5 +5,12 @@
         "backup-dir":"apple-kawaii",
         "world-list":["DIM-1","DIM1","flat"],
         "mod-list":"https://github.com/Fulldroper/apple_kawaii/archive/master.zip"
+    },
+    {
+        "name":"industrial",
+        "version":"1.7.10",
+        "backup-dir":"industrial",
+        "world-list":["DIM-1","DIM-17","DIM-37","DIM-38","DIM-39","DIM1","DIM7","event","mine","rp_flat"],
+        "mod-list":"https://github.com/Fulldroper/tech-1.7.10/archive/master.zip"
     }
 ]
