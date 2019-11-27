@@ -3,10 +3,85 @@
     border-style: dotted;
     text-decoration: underline;
     color: #8c8c8c;
-    border-color: white;
-    border-bottom-color: white;
+    border-color: #0000;
     border-bottom-color: black;
+    background-color: #0000;
 }
+.container,#button-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}
+.disable-selection,#button-container>div,img {
+    -moz-user-select: none; /* Firefox */
+     -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+ -webkit-user-select: none; /* Chrome, Safari, and Opera */
+ -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+.block,#button-container>div{
+    border-radius: 10px;
+    border-style: double;
+    margin-top: 5px;
+    padding: 5px;
+}
+#button-container>div{
+    cursor: pointer;
+}
+#status{
+    border-radius: 10px;
+    border-style: double;
+    width: max-content;
+    padding: 5px;
+    float: right;
+    transform: translate(0,-45px);
+}
+#status-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    color: #fff0;
+    float: right;
+    margin-left: 5px;
+    margin-right: 2px;
+    transform: translate(0,5px);
+}
+a{
+    text-decoration: none;
+}
+ /* unvisited link */
+ a:link {
+    color: #900;;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #900;;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+    color: green;
+  } 
+#modlist{
+    color: #8e030380;
+}
+#alert{
+    background-color: darkorange;
+    color: darkred;
+    text-align: center;
+    padding: 5px;
+    
+}
+
  #callback{
       cursor: pointer;
       color: red;
@@ -24,36 +99,11 @@
         width: 100%;
         max-width: 550px;
         border-radius: 10px;
+        border-style: double;
     }
     #main{
         max-width: 560px;
         padding: 15px;
-    }
-    #main--{
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0);
-        -moz-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%,  0);
-        -webkit-transform: translate(-50%, 0);
-        -o-transform: translate(-50%,  0);
-        max-width: 700px;
-    }
-    #monitoring{
-        padding: 10px;
-        display: inline-flex;
-        border-radius: 10px;
-    }
-    #monitoring>img{
-        margin-left:5px;
-        margin-right:15px;
-        border-radius: 50px;
-    }
-    #monitoring>div{
-        margin-right:5px;
-    }
-    #monitoring>div>p{
-        margin:0px;
     }
     #gallery{
         margin-left: 10px;
@@ -68,4 +118,4 @@
         background-color: #f5efef;
         margin-bottom:10px;
         opacity: 0.6;
-    }
+    }    
