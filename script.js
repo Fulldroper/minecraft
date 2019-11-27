@@ -7,6 +7,7 @@ function setBaseImg(){
 function toggleTheme() {
     if (theme) {
         theme=false;
+        document.getElementById('alert').style.display="none"
         document.documentElement.style="background-color:#262626;color:#b5b5b5;"
         window.localStorage.setItem('theme', '1')
     } else {
@@ -41,7 +42,7 @@ function generateSaves() {
     let str = ''
     saves.forEach(el=>{
         let worlds = '';
-        el['world-list'].forEach(wel=> worlds+=`<a href="https://github.com/Fulldroper/minecraft/blob/master/worlds/${el['backup-dir']}/${wel}.zip?raw=true">${wel}</a>, `)
+        el['world-list'].forEach(wel=> worlds+=`<a href="/worlds/${el['backup-dir']}/${wel}.zip">${wel}</a>, `)
         str+=`<div><hr style="border-style: dotted;"><p>Сервер: ${el.name}</p><p>Версия: ${el.version}</p><p>Миры: ${worlds}</p><p>Моды: <a href="${el['mod-list']}">скачать</a></p></div>`
     })
     document.getElementById('block-content').innerHTML=str;
@@ -78,19 +79,35 @@ function checkOnline() {
         }else{
             document.getElementById('status').innerHTML=''
         }
-
+        document.getElementById('ip-allert').style.display= res && res.online ? "block" : "none";
         document.getElementById('status').innerHTML=`${status} <div id="status-dot" style="background-color: ${color};">~</div>`
     })
 }
+function CopyToClipboard(that) {
+    if (document.selection) { 
+        var range = document.body.createTextRange();
+        range.moveToElementText(that);
+        range.select().createTextRange();
+        document.execCommand("copy"); 
+    
+    } else if (window.getSelection) {
+        var range = document.createRange();
+         range.selectNode(that);
+         window.getSelection().addRange(range);
+         document.execCommand("copy");
+         alert("IP адресс скопирован в ваш буфер обмена") 
+}}
 window.onload=()=>{
+    document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}:${global['host-port']}</a>`
     setBaseImg()
     selectMenu('about','О сервере')
     document.getElementById('theme').onclick=toggleTheme
     if(window.localStorage.getItem('theme') == '1') {
+        document.getElementById('alert').style.display="none"
         toggleTheme()
     }else{
         document.documentElement.style="color: #424242;";
     }
     checkOnline()
-    setInterval(checkOnline,10000)
+    setInterval(checkOnline,20000)
 }

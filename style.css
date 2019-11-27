@@ -79,12 +79,20 @@ a{
     color: darkred;
     text-align: center;
     padding: 5px;
-    
 }
-
+#ip-allert{
+    color: #0070ff;
+    text-align: center;
+    padding: 5px;
+}
+#ip-allert>a{
+    cursor: pointer;
+    color: darkorange;
+}
  #callback{
       cursor: pointer;
       color: red;
+      color: #0070ff;
   }
   #ip-addr{
     background: #b99aff;
