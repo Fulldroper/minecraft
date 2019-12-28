@@ -42,7 +42,7 @@ function generateSaves() {
     let str = ''
     saves.forEach(el=>{
         let worlds = '';
-        el['world-list'].forEach(wel=> worlds+=`<a href="/worlds/${el['backup-dir']}/${wel}.zip">${wel}</a>, `)
+        el['world-list'].forEach(wel=> worlds+=`<a href="https://github.com/Fulldroper/minecraft/blob/master/worlds/${el['backup-dir']}/${wel}.zip?raw=true">${wel}</a>, `)
         str+=`<div><hr style="border-style: dotted;"><p>Сервер: ${el.name}</p><p>Версия: ${el.version}</p><p>Миры: ${worlds}</p><p>Моды: <a href="${el['mod-list']}">скачать</a></p></div>`
     })
     document.getElementById('block-content').innerHTML=str;
