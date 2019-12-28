@@ -2,7 +2,7 @@ const saves = [
     {
         "name":"File 51",
         "version":"1.7.10",
-        "backup-dir":"apple-kawaii",
+        "backup-dir":"file-51",
         "world-list":["DIM-1","DIM1"],
         "mod-list":"https://github.com/Fulldroper/midlle2-reload/archive/master.zip"
     },
