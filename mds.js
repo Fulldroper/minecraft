@@ -1,5 +1,5 @@
 const global = {
     "discord-id":"JMEx6Zz",
-    "host-ip":"mine.fllz.cf",
+    "host-ip":"mine.flll.cf",
     "host-port":"1339"
 }
