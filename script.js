@@ -97,7 +97,7 @@ function CopyToClipboard(that) {
          document.execCommand("copy");
          alert("IP адресс скопирован в ваш буфер обмена") 
 }}
-window.onload=()=>{
+//window.onload=()=>{
     console.log("autoexec")
     document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}:${global['host-port']}</a>`
     setBaseImg()
@@ -111,4 +111,4 @@ window.onload=()=>{
     }
     checkOnline()
     setInterval(checkOnline,20000)
-}
+//}
