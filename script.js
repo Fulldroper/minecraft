@@ -2,20 +2,6 @@ let theme = true;
 let statusObj;
 function setBaseImg(){
     document.getElementById('logo').src=base64Imgs['logo']
-    document.getElementById('theme').src=base64Imgs['black-bat']
-}
-function toggleTheme() {
-    if (theme) {
-        theme=false;
-        document.getElementById('alert').style.display="none"
-        document.documentElement.style="background-color:#262626;color:#b5b5b5;"
-        window.localStorage.setItem('theme', '1')
-    } else {
-        theme=true;
-        document.documentElement.style="color: #424242;";
-        window.localStorage.setItem('theme', '0')
-    }
-    document.getElementById('theme').src=base64Imgs[theme ? 'black-bat' : 'gray-bat']
 }
 function readyCallback() {
     let form = document.getElementById('iframe-block').style.display="none";
@@ -97,18 +83,11 @@ function CopyToClipboard(that) {
          document.execCommand("copy");
          alert("IP адресс скопирован в ваш буфер обмена") 
 }}
-//window.onload=()=>{
+window.onload=()=>{
     console.log("main script started")
     document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}:${global['host-port']}</a>`
     setBaseImg()
     selectMenu('about','О сервере')
-    document.getElementById('theme').onclick=toggleTheme
-    if(window.localStorage.getItem('theme') == '1') {
-        document.getElementById('alert').style.display="none"
-        toggleTheme()
-    }else{
-        document.documentElement.style="color: #424242;";
-    }
     checkOnline()
     setInterval(checkOnline,20000)
-//}
+}

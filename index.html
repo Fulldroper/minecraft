@@ -21,29 +21,17 @@
 </head>
 <body>
     <div class="main" id="main">
-        <div id="alert">Нажмите на летучую мышь для тёмного режима</div>
         <div id="alert" style="background-color:red;">Сервер закрыт с 5 апреля 2020</div>
-        <script>
-            var size = ((window.innerWidth-560)/2)>0?((window.innerWidth-560)/2)+'px':0+'px';
-            var css = '.main{margin-left:'+size+';}',
-            head = document.head || document.getElementsByTagName('head')[0],
-            style = document.createElement('style');
-    
-            head.appendChild(style);
-    
-            style.type = 'text/css';
-            if (style.styleSheet){
-            // This is required for IE8 and below.
-            style.styleSheet.cssText = css;
-            } else {
-            style.appendChild(document.createTextNode(css));
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                background-color: #202225;
+                color: #8b8c91;
             }
-            window.onresize=()=>{
-                document.getElementById('main').style.marginLeft=((window.innerWidth-560)/2)>0?((window.innerWidth-560)/2)+'px':0+'px'
-            }    
-        </script>
+        </style>
         <div>
-            <h2>P.M.T. Minecraft Server <img width="30px" height="30px" style="transform: translate(0,10px);cursor: pointer;" id="theme"></h2>
+            <h2>P.M.T. Minecraft Server</h2>
             <div id="status"> checking... <div id="status-dot" style="background-color: yellow;">~</div></div>
             <div style="transform: translate(0,-20px);">
                 <p id="motd"></p>
@@ -69,6 +57,6 @@
     <script type="text/javascript" src="./gallery.js" onload="console.log('gallery module loaded')"></script>
     <script type="text/javascript" src="./games.js" onload="console.log('games module loaded')"></script>
 </body>
-<script src="https://fulldroper.github.io/lib-js/stats-log.js"></script>
+<!--<script src="https://fulldroper.github.io/lib-js/stats-log.js"></script>-->
 </html>
 
