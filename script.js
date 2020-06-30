@@ -91,3 +91,48 @@ window.onload=()=>{
     checkOnline()
     setInterval(checkOnline,20000)
 }
+callback.onsubmit = e => {
+    e.preventDefault();
+    const hook = { 
+        url : "https://discordapp.com/api/webhooks/708253666687320104/ch5lOSWyI13ynU99zPAq16Z9-IPb-bWWXuzswHNNO1kCXog3ihbRObjO-Y6b_MEfhU2Q",
+        username : './minecraft/',
+        avatar : 'https://fulldroper.github.io/imgs/2.png',
+    }
+    const callbackReady = x => {
+        const send = x => {
+            fetch(x['hook_url'],{
+                method: 'POST',
+                headers: {'Accept': 'application/json','Content-Type': 'application/json'},
+                body: JSON.stringify(x)
+            })
+        }
+        hook.like = x.children[0][0].checked? "да" : "нет"
+        hook.mail = x.children[0][2].value
+        hook.msg = x.children[0][3].value
+    
+        const y = {
+            'hook_url' : hook.url,
+            'username' : hook.username,
+            'avatar_url' : hook.avatar,
+            'content' : `\`\`\`json
+{
+    "domen": "${window.location.href}",
+    "Вам нравится сайт?" : "${hook.like}",
+    "Как мы можем с вами связатся?" : "${hook.mail}",
+    "Дата" : "${new Date()}"
+}\`\`\`
+Сообщение администрации :
+\`\`\`
+${hook.msg}
+\`\`\``
+        }
+        send(y)
+        x.click();
+        setTimeout(() => {
+            x.onclick = undefined;
+            x.classList = "callback-ready"
+        }, 3100,x);
+        return false
+    }
+    callbackReady(document.getElementsByClassName('callback')[0])
+}

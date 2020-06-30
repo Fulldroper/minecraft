@@ -89,11 +89,7 @@ a{
     cursor: pointer;
     color: darkorange;
 }
- #callback{
-      cursor: pointer;
-      color: red;
-      color: #0070ff;
-  }
+
   #ip-addr{
     background: #b99aff;
     border-radius: 10px;
@@ -126,4 +122,38 @@ a{
         background-color: #f5efef;
         margin-bottom:10px;
         opacity: 0.6;
-    }    
+    }
+    
+    .callback{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        width: max-content;
+        height: max-content;
+        background-color: #2f3136;
+        position: relative;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .callback>form>div{
+        background-color: #202225;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: -22px;
+    }
+    .callback>form>input, .callback>form>textarea{
+        background-color: #202225;
+        border-color: #2a2c31;
+        padding: 5px;
+        font-style: oblique;
+        color: #686a6b;
+        border-radius: 10px;
+        margin-top: 10px;
+        width: calc(100% - 15px);
+    }
+    .callback>form>input:last-child{
+        border-radius: 10px;
+        background-color: #43b581;
+        color: #d9d9d9;
+        cursor: pointer;
+    }
