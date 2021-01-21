@@ -3,7 +3,7 @@ camera = new THREE.PerspectiveCamera(45, window.innerHeight/window.innerHeight, 
 camera.position.z = 10
 renderer = new THREE.WebGLRenderer({alpha: true,antialias:true});
 renderer.setClearColor(0x000000, 0)
-renderer.setSize(500,500)
+renderer.setSize(200,200)
 renderer.domElement.setAttribute('id',"3dCanvas")
 document.querySelector('#c3d').appendChild(renderer.domElement)
 
