@@ -1,12 +1,4 @@
-let theme = true;
 let statusObj;
-function setBaseImg(){
-    document.getElementById('logo').src=base64Imgs['logo']
-}
-function readyCallback() {
-    let form = document.getElementById('iframe-block').style.display="none";
-    let ok = document.getElementById('ok-msg').style.display="block";;    
-}
 function glr(x) {
     x.style.width="calc(100% - 45px)";
     x.style.height="100%";
@@ -86,7 +78,7 @@ function CopyToClipboard(that) {
 window.onload=()=>{
     console.log("main script started")
     document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}:${global['host-port']}</a>`
-    setBaseImg()
+    document.getElementById('logo').src=base64Imgs['logo']
     selectMenu('about','О сервере')
     checkOnline()
     setInterval(checkOnline,20000)
