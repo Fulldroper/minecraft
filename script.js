@@ -1,7 +1,23 @@
+let theme = true;
 let statusObj;
+function setBaseImg(){
+    document.getElementById('logo').src=base64Imgs['logo']
+}
 function readyCallback() {
     let form = document.getElementById('iframe-block').style.display="none";
     let ok = document.getElementById('ok-msg').style.display="block";;    
+}
+function glr(x) {
+    x.style.width="calc(100% - 45px)";
+    x.style.height="100%";
+    x.style.opacity="1";
+    x.setAttribute('onclick', "nglr(this)");
+}
+function nglr(x) {
+    x.style.width="50px";
+    x.style.height="35px";
+    x.style.opacity="0.6";
+    x.setAttribute('onclick', "glr(this)");
 }
 function loadImgs() {
     let container ='' 
@@ -16,6 +32,25 @@ function generateSaves() {
         str+=`<div><hr style="border-style: dotted;"><p>Сервер: ${el.name}</p><p>Версия: ${el.version}</p><p>Миры: ${worlds}</p><p>Моды: <a href="${el['mod-list']}">скачать</a></p></div>`
     })
     document.getElementById('block-content').innerHTML=str;
+}
+function selectMenu(x,title) {
+    if (content[x] && title) {
+        switch (x) {
+            case 'gallery':
+                    document.getElementById('block-title').innerHTML=title;
+                    document.getElementById('block-content').innerHTML=content[x];
+                    loadImgs()
+                break;
+            case 'saves':
+                    document.getElementById('block-title').innerHTML=title;
+                    generateSaves()
+                break;
+            default:
+                    document.getElementById('block-title').innerHTML=title;
+                    document.getElementById('block-content').innerHTML=content[x];
+                break;
+        }
+    }
 }
 function checkOnline() {
     console.log('check online')
@@ -49,53 +84,10 @@ function CopyToClipboard(that) {
          alert("IP адресс скопирован в ваш буфер обмена") 
 }}
 window.onload=()=>{
+    console.log("main script started")
     document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}:${global['host-port']}</a>`
+    setBaseImg()
+    selectMenu('about','О сервере')
     checkOnline()
-    loadImgs()
     setInterval(checkOnline,20000)
-}
-callback.onsubmit = e => {
-    e.preventDefault();
-    const hook = { 
-        url : "https://discordapp.com/api/webhooks/708253666687320104/ch5lOSWyI13ynU99zPAq16Z9-IPb-bWWXuzswHNNO1kCXog3ihbRObjO-Y6b_MEfhU2Q",
-        username : './minecraft/',
-        avatar : 'https://fulldroper.github.io/imgs/2.png',
-    }
-    const callbackReady = x => {
-        const send = x => {
-            fetch(x['hook_url'],{
-                method: 'POST',
-                headers: {'Accept': 'application/json','Content-Type': 'application/json'},
-                body: JSON.stringify(x)
-            })
-        }
-        hook.like = x.children[0][0].checked? "да" : "нет"
-        hook.mail = x.children[0][2].value
-        hook.msg = x.children[0][3].value
-    
-        const y = {
-            'hook_url' : hook.url,
-            'username' : hook.username,
-            'avatar_url' : hook.avatar,
-            'content' : `\`\`\`json
-{
-    "domen": "${window.location.href}",
-    "Вам нравится сайт?" : "${hook.like}",
-    "Как мы можем с вами связатся?" : "${hook.mail}",
-    "Дата" : "${new Date()}"
-}\`\`\`
-Сообщение администрации :
-\`\`\`
-${hook.msg}
-\`\`\``
-        }
-        send(y)
-        x.click();
-        setTimeout(() => {
-            x.onclick = undefined;
-            x.classList = "callback-ready"
-        }, 3100,x);
-        return false
-    }
-    callbackReady(document.getElementsByClassName('callback')[0])
 }
