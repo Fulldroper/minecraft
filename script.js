@@ -46,7 +46,7 @@ function selectMenu(x,title) {
 }
 function checkOnline() {
     console.log('check online')
-    fetch(`https://mcapi.us/server/status?ip=${global['host-ip']}${global['host-port']&&`&port=${global['host-port']}`}`)
+    fetch(`https://mcapi.us/server/status?ip=${global['host-ip']}${global['host-port'] == undefined &&`&port=${global['host-port']}`}`)
     .then(res => res.json())
     .then(res => {
         statusObj = res;
