@@ -77,7 +77,7 @@ function CopyToClipboard(that) {
 }}
 window.onload=()=>{
     console.log("main script started")
-    document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}:${global['host-port']}</a>`
+    document.getElementById('ip-allert').innerHTML=`IP адресс сервера: <a onclick="CopyToClipboard(this)">${global['host-ip']}${global['host-port'] != undefined ? `:${global['host-port']}`:''}</a>`
     document.getElementById('logo').src=base64Imgs['logo']
     selectMenu('about','О сервере')
     checkOnline()
