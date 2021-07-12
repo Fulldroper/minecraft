@@ -1,2 +1,1 @@
-# minecraft server
-Сервер готовится к открытию
+# lite2-reload1.7.10
