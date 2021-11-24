@@ -1,0 +1,12 @@
+{
+    "minimumVersion": 1,
+    "packages": [
+        {
+            "name": "P.M.T. 1.7.10 [ phenix v3 ]",
+            "title": "P.M.T. 1.7.10 [ phenix v3 ]",
+            "version": "2021-11-25-00-27-50",
+            "location": "p.m.t.-1.7.10-phenix-v3-.json",
+            "priority": 1
+        }
+    ]
+}
